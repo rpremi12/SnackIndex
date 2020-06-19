@@ -34,6 +34,11 @@ class Rating(models.Model):
 	rating= models.IntegerField()
 	when = models.DateTimeField()
 
+class View(models.Model):
+	ofitem = models.ForeignKey(Snack, on_delete=models.CASCADE)
+	ratedby = models.ForeignKey(User, on_delete=models.CASCADE)
+	when = models.DateTimeField()
+
 class Category(models.Model):
 	name = models.CharField(max_length=60)
 
