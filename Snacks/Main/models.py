@@ -12,7 +12,10 @@ class Snack(models.Model):
 	qrcode = models.IntegerField()
 	description = models.CharField(max_length=600)
 	name = models.CharField(max_length=64)
-	jpnName = models.CharField(max_length=64)
+	origName = models.CharField(max_length=64)
+	origCountry = models.CharField(max_length=64)
+	whereToBuy = models.CharField(max_length=800)
+	calories = models.IntegerField()
 
 class Collection(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -26,18 +29,18 @@ class Review(models.Model):
 	ofitem = models.ForeignKey(Snack, on_delete=models.CASCADE)
 	ratedby = models.ForeignKey(User, on_delete=models.CASCADE)
 	review = models.CharField(max_length=500)
-	when = models.DateTimeField()
+	when = models.DateTimeField(auto_now_add=True)
 
 class Rating(models.Model):
 	ofitem = models.ForeignKey(Snack, on_delete=models.CASCADE)
 	ratedby = models.ForeignKey(User, on_delete=models.CASCADE)
 	rating= models.IntegerField()
-	when = models.DateTimeField()
+	when = models.DateTimeField(auto_now_add=True)
 
 class View(models.Model):
 	ofitem = models.ForeignKey(Snack, on_delete=models.CASCADE)
-	ratedby = models.ForeignKey(User, on_delete=models.CASCADE)
-	when = models.DateTimeField()
+	viewBy = models.ForeignKey(User, on_delete=models.CASCADE)
+	when = models.DateTimeField(auto_now_add=True)
 
 class Category(models.Model):
 	name = models.CharField(max_length=60)
