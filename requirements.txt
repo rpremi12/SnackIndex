@@ -59,11 +59,11 @@ psycopg2==2.8.5
 # pycups==2.0.1
 pycurl==7.43.0.2
 pydbus==0.6.0
-pyenchant==2.0.0
+# pyenchant==2.0.0
 #PyGObject==3.34.0
 #pyinotify==0.9.6
-pykickstart==3.21
-PyMySQL==0.9.3
+# pykickstart==3.21
+#PyMySQL==0.9.3
 pyOpenSSL==19.0.0
 pyparted==3.11.2
 PySocks==1.7.0
