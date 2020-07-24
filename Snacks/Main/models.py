@@ -9,7 +9,7 @@ class User(models.Model):
 	password = models.CharField(max_length=48)
 
 class Snack(models.Model):
-	qrcode = models.IntegerField()
+	qrcode = models.BigIntegerField()
 	description = models.CharField(max_length=600)
 	name = models.CharField(max_length=64)
 	origName = models.CharField(max_length=64)
