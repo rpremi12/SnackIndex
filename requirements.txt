@@ -70,10 +70,10 @@ pyOpenSSL==19.0.0
  python-augeas==0.5.0
 python-dateutil==2.8.0
 #python-jwt==2.0.1
-python-meh==0.48
-pytz==2019.2
-pyudev==0.21.0
-pyxdg==0.26
+#python-meh==0.48
+#pytz==2019.2
+#pyudev==0.21.0
+#pyxdg==0.26
 requests==2.22.0
 requests-file==1.4.3
 requests-ftp==0.3.1
