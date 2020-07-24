@@ -5,8 +5,8 @@ asgiref==3.2.7
 asn1crypto==0.24.0
 Beaker==1.10.0
 beautifulsoup4==4.9.1
-blivet==3.1.7
-blivet-gui==2.1.15
+# blivet==3.1.7
+# blivet-gui==2.1.15
 Brlapi==0.7.0
 cffi==1.12.3
 chardet==3.0.4
