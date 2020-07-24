@@ -50,18 +50,18 @@ productmd==1.26
 protobuf==3.12.2
 psutil==5.7.0
 psycopg2==2.8.5
-pwquality==1.4.2
-pyasn1==0.4.8
-pyasn1-modules==0.2.8
-pycairo==1.18.1
-pycparser==2.14
-pycrypto==2.6.1
-pycups==2.0.1
+# pwquality==1.4.2
+# pyasn1==0.4.8
+# pyasn1-modules==0.2.8
+# pycairo==1.18.1
+# pycparser==2.14
+# pycrypto==2.6.1
+# pycups==2.0.1
 pycurl==7.43.0.2
 pydbus==0.6.0
 pyenchant==2.0.0
-PyGObject==3.34.0
-pyinotify==0.9.6
+#PyGObject==3.34.0
+#pyinotify==0.9.6
 pykickstart==3.21
 PyMySQL==0.9.3
 pyOpenSSL==19.0.0
