@@ -7,6 +7,6 @@ Ren Blanding and Ryan Premi
 ## Made with
 
 - Django 
-- SQLite 3.0
+- PostgreSQL
 - React.JS
 
