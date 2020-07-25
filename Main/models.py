@@ -2,20 +2,25 @@
 from django.db import models
 
 class User(models.Model):
-	username = models.CharField(max_length=64)
-	fname = models.CharField(max_length=64)
-	lname = models.CharField(max_length=64)
-	email = models.CharField(max_length=100)
-	password = models.CharField(max_length=48)
+	username = models.CharField(max_length=200, null= True)
+	name = models.CharField(max_length=200, null = True)
+	email = models.CharField(max_length=200, null = True)
+	password = models.CharField(max_length=48, null = True)
+
+	def __str__(self):
+		return self.username
 
 class Snack(models.Model):
-	qrcode = models.BigIntegerField()
-	description = models.CharField(max_length=600)
-	name = models.CharField(max_length=64)
-	origName = models.CharField(max_length=64)
-	origCountry = models.CharField(max_length=64)
-	whereToBuy = models.CharField(max_length=800)
-	calories = models.IntegerField()
+	qrcode = models.BigIntegerField(null = True)
+	description = models.CharField(max_length=600, null = True)
+	name = models.CharField(max_length=64, null = True)
+	origName = models.CharField(max_length=64, null = True)
+	origCountry = models.CharField(max_length=64, null = True)
+	whereToBuy = models.CharField(max_length=800, null = True)
+	calories = models.IntegerField(null = True)
+
+	def __str__(self):
+		return self.name
 
 class Collection(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)

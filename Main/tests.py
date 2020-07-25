@@ -7,23 +7,23 @@ from .models import *
 
 class UserTests(TestCase):
 	def setUp(self):
-		User.objects.create(username="rpremi", fname="Ryan",lname="Premi",
+		User.objects.create(username="rpremi", name ="Ryan Premi",
 							email="rpremi@hotmail.com", password="test1")
 
 	#Insertion and Creation Test
 	def test_user_1(self):
 		test_user = User.objects.get(username="rpremi")
-		self.assertEqual(test_user.fname, "Ryan")
+		self.assertEqual(test_user.name, "Ryan Premi")
 
 class SnackTests(TestCase):
 	def setUp(self):
 		Snack.objects.create(qrcode=978067972020, description="chocolate candy",
-							 name ="check", origName="check", origCountry="USA", 
+							 name ="chocolate bar", origName="check", origCountry="USA", 
 							 whereToBuy="testsite.com", calories=100)
 
 	#Insertion and Creation Test
 	def test_snack_1(self):
-		test_snack = Snack.objects.get(name="check")
+		test_snack = Snack.objects.get(name="chocolate bar")
 		self.assertEqual(test_snack.origCountry, "USA")
 
 
@@ -32,7 +32,7 @@ class SnackTests(TestCase):
 
 class CollectionTests(TestCase):
 	def setUp(self):
-		User.objects.create(username="rpremi", fname="Ryan",lname="Premi",
+		User.objects.create(username="rpremi", name ="Ryan Premi",
 							email="rpremi@hotmail.com", password="test1")
 		Collection.objects.create(name="Favorite", user= User.objects.get(username="rpremi"))
 
@@ -42,13 +42,13 @@ class CollectionTests(TestCase):
 		self.assertEqual(test_collect.name, "Favorite")
 	#deletion test
 	def test_collection_2(self):
-		User.objects.get(fname="Ryan").delete()
+		User.objects.get(name="Ryan Premi").delete()
 		self.assertEqual(len(Collection.objects.all()),0)
 
 
 class CollectionEntryTests(TestCase):
 	def setUp(self):
-		User.objects.create(username="rpremi", fname="Ryan",lname="Premi",
+		User.objects.create(username="rpremi", name="Ryan Premi",
 							email="rpremi@hotmail.com", password="test1")
 		Collection.objects.create(name="Favorite", user= User.objects.get(username="rpremi"))
 		Snack.objects.create(qrcode=978067972020, description="chocolate candy",
@@ -62,7 +62,7 @@ class CollectionEntryTests(TestCase):
 		self.assertEqual(test_collect.collect.name, "Favorite")
 	#deletion test
 	def test_collect_entr_2(self):
-		User.objects.get(fname="Ryan").delete()
+		User.objects.get(name="Ryan Premi").delete()
 		self.assertEqual(len(CollectionEntry.objects.all()),0)
 
 
@@ -75,7 +75,7 @@ class CollectionEntryTests(TestCase):
 
 class ReviewTests(TestCase):
 	def setUp(self):
-		usr = User.objects.create(username="rpremi", fname="Ryan",lname="Premi",
+		usr = User.objects.create(username="rpremi", name="Ryan Premi",
 							email="rpremi@hotmail.com", password="test1")
 		snk = Snack.objects.create(qrcode=978067972020, description="chocolate candy",
 							 name ="check", origName="check", origCountry="USA", 
@@ -88,7 +88,7 @@ class ReviewTests(TestCase):
 
 class RatingTests(TestCase):
 	def setUp(self):
-		usr = User.objects.create(username="rpremi", fname="Ryan",lname="Premi",
+		usr = User.objects.create(username="rpremi", name="Ryan Premi",
 							email="rpremi@hotmail.com", password="test1")
 		snk = Snack.objects.create(qrcode=978067972020, description="chocolate candy",
 							 name ="check", origName="check", origCountry="USA", 
@@ -101,7 +101,7 @@ class RatingTests(TestCase):
 
 class ViewTests(TestCase):
 	def setUp(self):
-		usr = User.objects.create(username="rpremi", fname="Ryan",lname="Premi",
+		usr = User.objects.create(username="rpremi", name="Ryan Premi",
 							email="rpremi@hotmail.com", password="test1")
 		snk = Snack.objects.create(qrcode=978067972020, description="chocolate candy",
 							 name ="check", origName="check", origCountry="USA", 
@@ -109,7 +109,7 @@ class ViewTests(TestCase):
 		View.objects.create(ofitem=snk, viewBy=usr, when=timezone.now())	
 	def test_rating_1(self):
 		test_view = View.objects.get(viewBy= User.objects.get(username="rpremi"))
-		self.assertEqual(test_view.viewBy.fname, "Ryan")
+		self.assertEqual(test_view.viewBy.name, "Ryan Premi")
 
 
 #SNACK CATEGORY
