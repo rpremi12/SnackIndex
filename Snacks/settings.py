@@ -152,5 +152,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = '/'
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
