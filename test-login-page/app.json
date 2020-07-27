@@ -1,0 +1,12 @@
+{
+  "name": "test-login-page",
+  "displayName": "test-login-page",
+  "expo": {
+    "name": "test-login-page",
+    "slug": "test-login-page",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
