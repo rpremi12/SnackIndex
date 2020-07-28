@@ -1,0 +1,47 @@
+.container {
+    flex: 1;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginContainer {
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.header {
+    height: 10%;
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 15%;
+}
+
+.textbox {
+    width: 85%;
+    height: 50px;
+    margin: 15px;
+    padding: 12px;
+    border-width: 2px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.button {
+    width: 85%;
+    color: #fff;
+    background-color: "gray";
+    border-radius: 4;
+    align-items: center;
+    padding: 20px;
+  }
+
+.buttonText {
+    color: 'white';
+  }
+
+

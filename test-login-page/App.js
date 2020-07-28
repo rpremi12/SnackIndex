@@ -9,17 +9,39 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.loginContainer}>
+
         <Text h1 style={styles.header}>SnackIndex Login</Text>
-        {/*<StatusBar style="auto" /> */}
+        
+        {/* Text Input Fields */}
         <TextInput style={styles.textbox} 
-        placeholder="Username"></TextInput>
+        placeholder="Username">
+        </TextInput>
+
         <TextInput style={styles.textbox} 
-        placeholder="Password"></TextInput>
+        placeholder="Password">
+        </TextInput>
+
+        {/* Forgot Password Button */}
+        <View style={styles.textInline}> 
+            <TouchableOpacity>
+              <Text style={styles.linkTextBoldPass}>Forgot your Password?</Text>
+            </TouchableOpacity>
+          </View>
+
+        {/* Login Button */}
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
+
+        {/* Registration Button */}
+          <View style={styles.textInline}> 
+            <TouchableOpacity>
+              <Text h3 style={styles.linkText}>Don't have an account? <Text style={styles.linkTextBold}>Register</Text></Text> 
+            </TouchableOpacity>
+          </View>
+
       </View>   
-    </View>     /* End of container */
+    </View> 
   );
 }
 
@@ -38,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     display: 'flex',
     alignItems: "center",
-    //paddingBottom: '40%',
+    paddingBottom: '40%',
   },
 
   header: {
@@ -55,7 +77,7 @@ const styles = StyleSheet.create({
     margin: 15,
     padding: 12,
     borderWidth: 2,
-    borderRadius: 4,
+    borderRadius: 12,
     fontSize: 18,
   },
 
@@ -63,14 +85,41 @@ const styles = StyleSheet.create({
     width: '85%',
     color: '#fff',
     backgroundColor: "gray",
-    borderRadius: 4,
+    borderRadius: 12,
     alignItems: "center",
     padding: 20,
+    marginTop: '10%',
   },
 
   buttonText: {
     color: 'white',
-  }
+  },
+
+  textInline: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    padding: '5%',
+    marginLeft: 'auto',
+    marginRight: '3%',
+  },
+
+  linkTextBold: {
+    color: 'black',
+    fontSize: 16,
+    marginTop: 0,
+  },
+
+  linkTextBoldPass: {
+    color: 'black',
+    fontSize: 16,
+    paddingTop: 0,
+  },
+
+  linkText: {
+    color: 'black',
+    fontSize: 16,
+  },
 
 
 })
