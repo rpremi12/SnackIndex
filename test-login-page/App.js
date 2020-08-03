@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { Component } from 'react';
 import { TouchableOpacity, StyleSheet, Text, View, Alert } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import Registration from './Register';
 
 // Adobe font embed
 (function(d) {
@@ -12,11 +12,13 @@ import { TextInput } from 'react-native-gesture-handler';
     },
   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 })(document);
+import { Register } from './Register';
 
 // const buttonColor = 'gray';
 
-export default function App() {
-  return (
+export default class App extends Component {
+  render() {
+    return (
     <View style={styles.container}>
       <View style={styles.loginContainer}>
 
@@ -45,7 +47,7 @@ export default function App() {
 
         {/* Registration Button */}
           <View style={styles.textInline2}> 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.goToRegistration}>
               <Text h3 style={styles.linkText}>Don't have an account? <Text style={styles.linkTextBold}>Register</Text></Text> 
             </TouchableOpacity>
           </View>
@@ -54,6 +56,8 @@ export default function App() {
     </View> 
   );
 }
+  }
+
 
 const styles = StyleSheet.create({
   
