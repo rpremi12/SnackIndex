@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, StyleSheet, Text, View, Alert } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import Registration from './Register';
+import  RegistrationPg  from './Register';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // Adobe font embed
 (function(d) {
@@ -12,13 +14,25 @@ import Registration from './Register';
     },
   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 })(document);
-import { Register } from './Register';
 
-// const buttonColor = 'gray';
+// Page Navigation Structure
+const Stack = createStackNavigator();
+
+const MainPg = () => {
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Log In">
+        <Stack.Screen name="Log In" component={App} />
+        <Stack.Screen name="Register" component={RegistrationPg} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
 
 export default class App extends Component {
   render() {
     return (
+
     <View style={styles.container}>
       <View style={styles.loginContainer}>
 
@@ -47,7 +61,7 @@ export default class App extends Component {
 
         {/* Registration Button */}
           <View style={styles.textInline2}> 
-            <TouchableOpacity onPress={this.goToRegistration}>
+            <TouchableOpacity onPress={ this }>
               <Text h3 style={styles.linkText}>Don't have an account? <Text style={styles.linkTextBold}>Register</Text></Text> 
             </TouchableOpacity>
           </View>
@@ -89,6 +103,24 @@ const styles = StyleSheet.create({
 
   textbox: {
     width: '85%',
+    height: 50,
+    margin: 15,
+    padding: 12,
+    borderWidth: 2,
+    borderRadius: 12,
+    fontSize: 18,
+    fontFamily: 'europa',
+  },
+
+  inlineTextbox: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+
+  textboxHalf: {
+    width: '38.5%',
     height: 50,
     margin: 15,
     padding: 12,
