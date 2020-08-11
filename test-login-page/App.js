@@ -18,25 +18,24 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Page Navigation Structure
 const Stack = createStackNavigator();
 
-const MainPg = () => {
+export default function App() {
   return(
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Log In">
-        <Stack.Screen name="Log In" component={App} />
+        <Stack.Screen name="Log In" component={Login} />
         <Stack.Screen name="Register" component={RegistrationPg} />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
 
-export default class App extends Component {
-  render() {
+function Login({ navigation })  {
     return (
 
     <View style={styles.container}>
       <View style={styles.loginContainer}>
 
-        <Text h1 style={styles.header}>SnackIndex Login</Text>
+        <Text h1 style={styles.header}>Logo Here</Text>
         
         {/* Text Input Fields */}
         <TextInput style={styles.textbox} 
@@ -61,7 +60,7 @@ export default class App extends Component {
 
         {/* Registration Button */}
           <View style={styles.textInline2}> 
-            <TouchableOpacity onPress={ this }>
+            <TouchableOpacity onPress={ () => navigation.navigate('Register') }>
               <Text h3 style={styles.linkText}>Don't have an account? <Text style={styles.linkTextBold}>Register</Text></Text> 
             </TouchableOpacity>
           </View>
@@ -70,7 +69,6 @@ export default class App extends Component {
     </View> 
   );
 }
-  }
 
 
 const styles = StyleSheet.create({
