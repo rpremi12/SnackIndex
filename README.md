@@ -2,11 +2,16 @@
 
 ## Made by
 
-Ren Blanding and Ryan Premi
+Ren Blanding  - **Front End**
+Ryan Premi - **Back End**
 
 ## Made with
 
-- Django 
+- Django
 - PostgreSQL
-- React.JS
+- React Native (Expo)
+- Heroku
 
+## Latest Working Build:
+
+https://snackindex.herokuapp.com/
