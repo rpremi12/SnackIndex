@@ -5,7 +5,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+ #   path('', views.index, name='index'),
+    path('api/lead/', views.SnackListCreate.as_view()),
     path('admin/', admin.site.urls),
     path('snacks/', views.snacks, name='snacks'),
     path('accounts/', include('django.contrib.auth.urls')),

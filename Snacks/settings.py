@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+ #   'Main.apps.MainConfig'
+    'rest_framework',    
     'Main',
 
 ]
@@ -111,6 +113,13 @@ DATABASES = {
 }
 
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+#comment this out to view Django editor version of /api/lead
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

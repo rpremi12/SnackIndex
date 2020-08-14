@@ -6,6 +6,15 @@ from django.http import HttpResponseRedirect
 from .models import Snack
 from django.contrib.auth.models import User
 
+from .serializers import SnackSerializer
+from rest_framework import generics
+
+#class example
+class SnackListCreate(generics.ListCreateAPIView):
+	queryset = Snack.objects.all()
+	serializer_class = SnackSerializer
+	
+
 # Create your views here.
 def index(request):
 	return render(request, 'accounts/main.html')
