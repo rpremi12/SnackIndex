@@ -24,7 +24,7 @@ oauth2client==3.0.0
 ordered-set==3.1
 Paste==3.2.2
 pid==2.2.3
-Pillow==6.2.2
+Pillow==9.0.0
 ply==3.11
 productmd==1.26
 protobuf==3.12.2
